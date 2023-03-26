@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <title>Netflix</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="shortcut icon" href="/L&B/images/nficon2016.png" type="image/x-icon">
+    <link rel="stylesheet" href="/L&B/css/mediaquerry-2.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+        }
+
+        .container-main-catalogo {
+            width: 100%;
+            height: 95vh;
+            background-image: url(/L&B/images/as-duas.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center 30%;
+        }
+
+        .container-main-catalogo-2 {
+            width: 100%;
+            height: 95vh;
+            position: absolute;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+        }
+
+        .nav {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            margin: 0 5%;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 100px;
+        }
+
+        .lupa {
+            position: relative;
+            display: flex;
+            justify-content: end;
+            top: 30px;
+            right: 200px;
+            cursor: pointer;
+        }
+
+        .lupa #lupa {
+            color: aliceblue;
+            cursor: pointer;
+        }
+
+        .sino {
+            position: relative;
+            display: flex;
+            justify-content: end;
+            top: 5px;
+            cursor: pointer;
+            right: 300px;
+        }
+
+        .sino #sino {
+            color: aliceblue;
+        }
+
+        .imagem-perfil img {
+            width: 55px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 300ms;
+        }
+
+        .imagem-perfil img:hover {
+            margin-top: -5px;
+        }
+
+        .imagem-perfil {
+            position: relative;
+            display: flex;
+            justify-content: end;
+            top: -30px;
+            right: 60px;
+        }
+
+        .container-main-conteudo {
+            color: aliceblue;
+            padding: 13% 6%;
+            font-size: 25px;
+            line-height: 50px;
+        }
+
+        .button-lear {
+            margin-top: 30px;
+        }
+
+
+        .button-lear button {
+            padding: 11px 25px;
+            border-radius: 2px;
+            border: none;
+            color: #fff;
+            background-color: #e61b1b;
+            cursor: pointer;
+            transition: all 500ms;
+            position: absolute;
+        }
+
+        .button-lear button:hover {
+            background-color: #ff0000ac;
+        }
+
+        .container-2 h2 {
+            color: aliceblue;
+            font-size: 35px;
+            margin-left: 16%;
+            padding-top: 5%;
+        }
+
+        .container-2 {
+            width: 100%;
+            height: auto;
+            background-color: #000000;
+        }
+
+        .product {
+            position: relative;
+            overflow: hidden;
+            padding: 5px;
+            background-color: #000000;
+        }
+
+
+        .product-container {
+            padding: 1% 13vw;
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+        .product-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .product-card-1 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/imagens-catalogos/b84e7f71602aa8d02bd178fca855ef3f.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+            transition: all 300ms;
+        }
+
+        .product-card-2 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_bruna/img-2.png);
+            background-size: 155%;
+            background-position: center;
+            border-radius: 6px;
+            transition: all 300ms;
+        }
+
+        .product-card-3 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_bruna/10.png);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+            transition: all 300ms;
+        }
+
+        .product-card-4 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_bruna/3.png);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+            transition: all 300ms;
+        }
+
+        .product-card-5 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_bruna/4.png);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+            transition: all 300ms;
+        }
+
+        .product-card-6 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_bruna/5.png);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+            transition: all 300ms;
+        }
+
+        .product-card-7 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_bruna/6.png);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+            transition: all 300ms;
+        }
+
+        .product-card-8 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            transition: all 300ms;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_bruna/7.png);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-9 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_bruna/8.png);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+
+        .product-card-11 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/main.jpeg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-12 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/10.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-13 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/Foto-principal.jpg);
+            background-size: 116%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-14 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            transition: all 300ms;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/3.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-15 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/4.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-16 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            transition: all 300ms;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/5.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-17 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            transition: all 300ms;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/6.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-18 {
+            flex: 0 0 auto;
+            width: 220px;
+            transition: all 300ms;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/7.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-19 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/8.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-20 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/9.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-21 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/10.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-22 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/11.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-23 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/12.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-24 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/13.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-25 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/14.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-26 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/15.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-27 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/16.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-28 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/17.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-29 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/18.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-30 {
+            flex: 0 0 auto;
+            width: 220px;
+            height: 340px;
+            transition: all 300ms;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/fotos_da_jujubinha/19.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-31 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/you.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-32 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/me.jpeg);
+            background-size: 155%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-33 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/1.png);
+            background-size: 110%;
+            background-position: bottom;
+            border-radius: 6px;
+        }
+
+        .product-card-34 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/2.png);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-35 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/3.jpeg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-36 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/4.jpeg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-37 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/5.jpg);
+            background-size: 120%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-38 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/6.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-39 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/7.png);
+            background-size: 100%;
+            background-position: top;
+            border-radius: 6px;
+        }
+
+        .product-card-40 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/8.jpeg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-41 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/9.jpeg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-42 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/11.jpeg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-43 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/10.jpg);
+            background-size: 100%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-44 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/12.jpg);
+            background-size: 120%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+        .product-card-45 {
+            flex: 0 0 auto;
+            transition: all 300ms;
+            width: 220px;
+            height: 340px;
+            margin-right: 40px;
+            background: linear-gradient(to top, #000000 -3%, #ff000000);
+            background-image: url(/L&B/images/vc_e_eu/13.jpg);
+            background-size: 120%;
+            background-position: center;
+            border-radius: 6px;
+        }
+
+
+        .product-card-1:hover,
+        .product-card-2:hover,
+        .product-card-3:hover,
+        .product-card-4:hover,
+        .product-card-5:hover,
+        .product-card-6:hover,
+        .product-card-7:hover,
+        .product-card-8:hover,
+        .product-card-9:hover,
+        .product-card-10:hover,
+        .product-card-11:hover,
+        .product-card-12:hover,
+        .product-card-13:hover,
+        .product-card-14:hover,
+        .product-card-15:hover,
+        .product-card-16:hover,
+        .product-card-17:hover,
+        .product-card-18:hover,
+        .product-card-19:hover,
+        .product-card-20:hover,
+        .product-card-21:hover,
+        .product-card-22:hover,
+        .product-card-23:hover,
+        .product-card-24:hover,
+        .product-card-25:hover,
+        .product-card-26:hover,
+        .product-card-27:hover,
+        .product-card-28:hover,
+        .product-card-29:hover,
+        .product-card-30:hover,
+        .product-card-31:hover,
+        .product-card-32:hover,
+        .product-card-33:hover,
+        .product-card-34:hover,
+        .product-card-35:hover,
+        .product-card-36:hover,
+        .product-card-37:hover,
+        .product-card-38:hover,
+        .product-card-39:hover,
+        .product-card-40:hover,
+        .product-card-41:hover,
+        .product-card-42:hover,
+        .product-card-43:hover,
+        .product-card-44:hover,
+        .product-card-45:hover {
+            transform: scale(0.9);
+            cursor: pointer;
+        }
+
+        .product-image {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .pre-btn,
+        .nxt-btn {
+            border: none;
+            width: 5vw;
+            height: 100%;
+            position: absolute;
+            top: -10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .pre-btn {
+            left: 0;
+            transform: rotate(180deg);
+        }
+
+        .nxt-btn {
+            right: 0;
+        }
+
+        .pre-btn img,
+        .nxt-btn img {
+            opacity: 0.2;
+        }
+
+        .pre-btn:hover img,
+        .nxt-btn:hover img {
+            opacity: 1;
+        }
+
+        .footer {
+            width: 100%;
+            height: 45vh;
+            background: linear-gradient(to top, #1d1d1d, #000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: aliceblue;
+            overflow: hidden;
+        }
+
+        .text-left {
+            margin-top: 10%;
+            color: #606060;
+        }
+
+        .text-right {
+            color: #606060;
+            margin-top: 10%;
+        }
+    </style>
+
+    <style part RESPONSIVE>
+        @media screen and (max-width: 950px) {
+            body {
+                font-size: 12px;
+                margin: 0;
+                padding: 0;
+                border: none;
+                max-width: 100%;
+            }
+
+            .container-main-catalogo {
+                width: 100%;
+                height: 95vh;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-image: url(/L&B/images/vc_e_eu/you.jpg);
+                /* background-image: url(/L&B/images/fotos_da_bruna/3.png); */
+            }
+
+            .container-main-catalogo-2 {
+                width: 100%;
+                height: 95vh;
+                position: absolute;
+                background: linear-gradient(to top, #000000 -3%, #ff000000);
+            }
+
+            .logo {
+                margin: 0 5%;
+            }
+
+            .lupa {
+                position: relative;
+                display: flex;
+                justify-content: end;
+                top: 30px;
+                right: 120px;
+                cursor: pointer;
+            }
+
+            .lupa #lupa {
+                color: aliceblue;
+                cursor: pointer;
+            }
+
+            .sino {
+                position: relative;
+                display: flex;
+                justify-content: end;
+                top: 5px;
+                cursor: pointer;
+                right: 165px;
+            }
+
+            .sino #sino {
+                color: aliceblue;
+            }
+
+            .imagem-perfil img {
+                width: 50px;
+                border-radius: 3px;
+                cursor: pointer;
+                transition: all 300ms;
+            }
+
+            .imagem-perfil img:hover {
+                margin-top: -5px;
+            }
+
+            .imagem-perfil {
+                position: relative;
+                display: flex;
+                justify-content: end;
+                top: -30px;
+                right: 40px;
+            }
+
+            .container-main-conteudo {
+                width: 100%;
+                color: aliceblue;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                font-size: 20px;
+                line-height: 50px;
+            }
+
+            .logo-n {
+                width: 50px;
+                margin-top: 47%;
+                margin-left: -50%;
+                position: absolute;
+            }
+
+            .nome-bruna-png {
+                margin-top: 60%;
+            }
+
+            .nome-bruna-png img {
+                width: 100px;
+            }
+
+            .button-lear {
+                margin-left: -40%;
+            }
+
+            .container-2 h2 {
+                font-size: 20px;
+            }
+
+            .pre-btn,
+            .nxt-btn {
+                display: none;
+            }
+
+            .footer {
+                width: 100%;
+                height: 35vh;
+                background: linear-gradient(to top, #1d1d1d, #000);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                color: aliceblue;
+                font-size: 18px;
+            }
+
+            .text-left {
+                margin-top: 5%;
+                color: #606060;
+            }
+
+            .text-right {
+                color: #606060;
+                margin-top: 5%;
+            }
+
+            .footer h2 {
+                margin-top: -25%;
+                font-size: 18px;
+                word-break: break-word;
+            }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-main-catalogo">
+        <div class="container-main-catalogo-2"></div>
+        <div class="nav">
+            <div class="logo">
+                <img src="/L&B/images/netflix.png" alt="logo" width="120px">
+            </div>
+            <div class="navbar">
+                <div class="lupa">
+                    <span id="lupa" class="material-symbols-outlined">
+                        search
+                    </span>
+                </div>
+                <div class="sino">
+                    <span id="sino" class="material-symbols-outlined">
+                        notifications
+                    </span>
+                </div>
+                <div class="imagem-perfil">
+                    <a href="/L&B/parte-1-perfil/perfil.html"><img src="/L&B/images/new.png" alt="logo"></a>
+                </div>
+            </div>
+        </div>
+        <div class="container-main-conteudo">
+            <div class="logo-n">
+                <img src="/L&B/images/logo_n_series.png" alt="" style="width: 110px; margin-top: -5%;">
+            </div>
+            <div class="nome-bruna-png">
+                <img src="/L&B/images/logobrunabranco.png" alt="" style="width: 250px;">
+            </div>
+            <h3>Minha Biruleibe ❤️❤️❤️</h3>
+            <div class="button-lear">
+                <a href="/L&B/parte-3-momento-foto-1/momento-1.html"><button>ASSISTIR</button></a>
+            </div>
+        </div>
+    </div>
+    <section class="container-2">
+        <h2>Sobre Você</h2>
+
+        <section class="product">
+            <button class="pre-btn"><img src="/L&B/images/arrow.png" alt="botao de proxima faixa"></button>
+            <button class="nxt-btn"><img src="/L&B/images/arrow.png" alt="botao de faixa anterior"></button>
+            <div class="product-container">
+                <a href="/L&B/parte-3-momento-foto-1/momento-1.html">
+                    <div class="product-card-1">
+                        <div class="product-image">
+                            <!-- imagem aqui -->
+                        </div>
+                    </div>
+                </a>
+                <div class="product-card-2">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-3">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-4">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-5">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-6">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-7">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-8">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-9">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-10">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+        </section>
+
+
+    </section>
+    <section class="container-2">
+        <h2>Você e eu</h2>
+
+        <section class="product">
+            <button class="pre-btn"><img src="/L&B/images/arrow.png" alt="botao de proxima faixa"></button>
+            <button class="nxt-btn"><img src="/L&B/images/arrow.png" alt="botao de faixa anterior"></button>
+            <div class="product-container">
+                <div class="product-card-31">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <a href="/L&B/parte-3-momento-foto-1/moment-luccas.html">
+                    <div class="product-card-32">
+                        <div class="product-image">
+                            <!-- imagem aqui -->
+                        </div>
+                    </div>
+                </a>
+                <div class="product-card-33">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-34">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-35">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-36">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-37">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-38">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-39">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-40">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-41">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-42">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-43">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-44">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-45">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+
+        </section>
+    </section>
+    <section class="container-2">
+        <h2>Jujubinha</h2>
+
+        <section class="product">
+            <button class="pre-btn"><img src="/L&B/images/arrow.png" alt="botao de proxima faixa"></button>
+            <button class="nxt-btn"><img src="/L&B/images/arrow.png" alt="botao de faixa anterior"></button>
+            <div class="product-container">
+                <a href="/L&B/jujubinha/jujubinha.html">
+                    <div class="product-card-11">
+                        <div class="product-image">
+                            <!-- imagem aqui -->
+                        </div>
+                    </div>
+                </a>
+                <div class="product-card-12">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-13">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-14">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-15">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-16">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-17">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-18">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-19">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+                <div class="product-card-20">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+                <div class="product-card-21">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+                <div class="product-card-22">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+                <div class="product-card-23">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+                <div class="product-card-24">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+                <div class="product-card-25">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+                <div class="product-card-26">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+                <div class="product-card-27">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+                <div class="product-card-28">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+                <div class="product-card-29">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+                <div class="product-card-30">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+        </section>
+
+
+
+    </section>
+    <section class="container-2">
+        <h2>Histórias e Memorias</h2>
+
+        <section class="product">
+            <button class="pre-btn"><img src="/L&B/images/arrow.png" alt="botao de proxima faixa"></button>
+            <button class="nxt-btn"><img src="/L&B/images/arrow.png" alt="botao de faixa anterior"></button>
+            <div class="product-container">
+                <a href="/L&B/hitorias-curtas/curtas-2.html">
+                    <div class="product-card-1">
+                        <div class="product-image">
+                            <!-- imagem aqui -->
+                        </div>
+                    </div>
+                </a>
+                <a href="/L&B/hitorias-curtas/curtas-3.html">
+                    <div class="product-card-2">
+                        <div class="product-image">
+                            <!-- imagem aqui -->
+                        </div>
+                    </div>
+                </a>
+                <a href="/L&B/hitorias-curtas/curtas-4.html">
+                    <div class="product-card-3">
+                        <div class="product-image">
+                            <!-- imagem aqui -->
+                        </div>
+                    </div>
+                </a>
+                <a href="/L&B/hitorias-curtas/curtas.html"></a>
+                <div class="product-card-4">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                </a>
+                <div class="product-card-5">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-6">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-7">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-8">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-9">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+                </div>
+                <div class="product-card-10">
+                    <div class="product-image">
+                        <!-- imagem aqui -->
+                    </div>
+
+                </div>
+        </section>
+
+
+    </section>
+
+
+    <section class="footer">
+        <div class="text-left">
+            Luccas Yago
+        </div>
+        <h2>feito com muito ❤️ pra você</h2>
+        <div class="text-right">
+            Bruna Santos
+        </div>
+    </section>
+
+
+    <script src="/L&B/parte-2-catalogos/script.js"></script>
+</body>
+
+</html>

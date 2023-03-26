@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* RESPONSIVIDADE PERFIL */
+
+@media screen and (max-width: 950px) {
+
+    body {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        height: 90%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to left, #1d1d1d, #000);
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .container-main-perfil-intro {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to left, #1d1d1d, #000);
+    }
+
+    .logo-perfil {
+        margin-top: -70%;
+    }
+
+    .logo-perfil img {
+        width: 170px;
+    }
+
+    .text-h2 {
+        font-size: 20px;
+    }
+
+    .container-box-main {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container-box-content img {
+        width: 115%;
+        border-radius: .1875rem;
+    }
+
+    .container-box-content p {
+        font-size: 15px;
+        font-weight: 500;
+        margin-left: -7%;
+    }
+
+}
